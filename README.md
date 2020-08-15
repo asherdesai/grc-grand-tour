@@ -1,0 +1,1 @@
+Georgetown University Running Club is running around the United States for the Fall 2020 semester. We'll be tracking our miles collectively and moving along our route! Follow along at asherdesai.github.io/index.html. You can see the Google Street View for our current location as well as our current location on the map!
