@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Ubuntu, sans-serif;
+}
+
+body {
+    background-color: #25252a;
+    color: #eeeeef;
+    margin: 0;
+}
+
+header {
+    background-color: #eeeeef;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #222223;
+    font-size: 48px;
+    text-align: center;
+}
+
+footer {
+    margin-top: 30px;
+    background-color: #eeeeef;
+    padding: 10px;
+}
+
+footer > p {
+    color: #222223;
+    font-size: 12px;
+    text-align: center;
+}
+
+#street-view img {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 50%;
+    border: 2px solid #eeeeef;
+}
+
+#data-viewer {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 30%;
+    text-align: center;
+}
+
+#data-viewer p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+input {
+    background-color: #25252a;
+    color: #eeeeef;
+    border: 2px solid #eeeeef;
+    padding: 10px 10px;
+    width: 20%;
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+input:hover {
+    background-color: #222223;
+    border: 2px solid white;
+    box-shadow: 0 0 10px white;
+}
+
+button {
+    background-color: #25252a;
+    color: #eeeeef;
+    border: 2px solid #eeeeef;
+    padding: 10px 10px;
+    width: 20%;
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #222223;
+    border: 2px solid white;
+    box-shadow: 0 0 10px white;
+}

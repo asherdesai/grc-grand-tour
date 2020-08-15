@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Asher Desai">
+        <meta name="description" content="Track GRC members' progress on their run across the country!">
+        <link rel="stylesheet" href="styles.css">
+        <title>Home</title>
+    </head>
+    <body>
+        <header>
+            <h1>The Grand Tour</h1>
+        </header>
+
+        <div id="data-viewer">
+            <p>Total Miles: <span id="total-miles">0</span></p>
+            <p>Coordinates: <span id="latitude">0</span>, <span id="longitude">0</span></p>
+        </div>
+
+        <div id="street-view">
+            <img src="images/hans-m-62126.jpg">
+        </div>
+
+        <input type="number" id="enter-miles" name="add-miles" min="0" max="50" step="0.01">
+        <button class="button" id="add-miles">Add Miles!</button>
+
+        <footer>
+            <p>Georgetown University Running Club 2020</p>
+        </footer>
+    </body>
+</html>
