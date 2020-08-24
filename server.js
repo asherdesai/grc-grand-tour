@@ -1,10 +1,11 @@
 const express = require('express');
+const dotenv = require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const app = express();
 
-var port = process.env.PORT || 3000;
-const connectionString = "mongodb+srv://primary-user:2Ek7L5KJ7mdtxNbe@cluster0.dcot0.mongodb.net/grc-grand-tour?retryWrites=true&w=majority";
+var port = process.env.PORT || 8080;
+const connectionString = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.dcot0.mongodb.net/grc-grand-tour?retryWrites=true&w=majority`;
 
 MongoClient.connect(connectionString, {
     useUnifiedTopology: true
@@ -29,7 +30,8 @@ MongoClient.connect(connectionString, {
                 }
             ]).toArray()
                 .then(result => {
-                    res.render('index.ejs', { total: result[0].all });
+                    console.log("Get request successful");
+                    res.render('index.ejs', { total: result[0].all.toFixed(2) });
                 })
                 .catch(error => console.error(error));
         });
