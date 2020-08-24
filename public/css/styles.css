@@ -35,17 +35,38 @@ footer > p {
     text-align: center;
 }
 
-#street-view img {
-    margin-top: 40px;
+#map-frame {
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    max-width: 50%;
+    height: 400px;
+    width: 70%;
     border: 2px solid #eeeeef;
 }
 
-#data-viewer {
-    margin-top: 40px;
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+#pano-frame {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 400px;
+    width: 70%;
+    border: 2px solid #eeeeef;
+}
+
+#pano {
+    height: 100%;
+    width: 100%;
+}
+
+#data {
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -53,34 +74,43 @@ footer > p {
     text-align: center;
 }
 
-#data-viewer p {
+#data > #total {
+    margin-top: 10px;
+    font-size: 50px;
+}
+
+#data > #latitude, #longitude {
     margin-top: 10px;
     font-size: 20px;
 }
 
-input {
+form {
+    margin-top: 30px;
+}
+
+input, button {
     background-color: #25252a;
     color: #eeeeef;
     border: 2px solid #eeeeef;
     padding: 10px 10px;
-    width: 20%;
+    width: 300px;
     text-align: center;
     display: block;
     font-size: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     transition-duration: 0.3s;
     cursor: pointer;
 }
 
-input:hover {
+input:hover, button:hover {
     background-color: #222223;
     border: 2px solid white;
     box-shadow: 0 0 10px white;
 }
 
-button {
+/* button {
     background-color: #25252a;
     color: #eeeeef;
     border: 2px solid #eeeeef;
@@ -96,8 +126,8 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+input[submit]:hover {
     background-color: #222223;
     border: 2px solid white;
     box-shadow: 0 0 10px white;
-}
+} */
