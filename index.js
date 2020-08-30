@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const dotenv = require('dotenv').config({path: `${__dirname}/.env`})
+//const dotenv = require('dotenv').config({path: `${__dirname}/.env`})
 const routes = require('./routes');
 
 var port = process.env.PORT || 5000;
