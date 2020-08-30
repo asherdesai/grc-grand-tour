@@ -4,7 +4,7 @@
   "description": "Georgetown University Running Club is running around the United States for the Fall 2020 semester. We'll be tracking our miles collectively and moving along our route! Follow along at asherdesai.github.io/index.html. You can see the Google Street View for our current location as well as our current location on the map!",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,6 @@
     "body-parser": "^1.19.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "mongodb": "^3.6.0"
+    "mongoose": "^5.10.2"
   }
 }
