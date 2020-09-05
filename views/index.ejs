@@ -5,8 +5,11 @@
         <meta name="author" content="Asher Desai">
         <meta name="description" content="Track GRC members' progress on their run across the country!">
         <link rel="stylesheet" href="/css/styles.css" type="text/css">
-        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIpOCYGkv5nJYN7bwf0aGqgtgQnYfchbw&callback=initialize"
-            defer></script> -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIpOCYGkv5nJYN7bwf0aGqgtgQnYfchbw&callback=initialize"
+            defer></script>
+        <script>
+            let coordinate = <%- JSON.stringify(coord) %>;
+            </script>
         <script src="/js/app.js"></script>
         <title>Home</title>
     </head>
@@ -16,12 +19,9 @@
         </header>
 
         <div id="data">
-            <% if (total) { %>
-                <span id="total"><%= total %></span>  
-             <% } %>
-            <span> miles</span>
+            <span id="total"><%= total %></span><span> miles</span>
             <br>
-            <span id="latitude">0</span>, <span id="longitude">0</span>
+            <span id="latitude"><%= coord.lat %></span>, <span id="longitude"><%= coord.lon %></span>
         </div>
 
         <form action="/submit" method="POST" id="form">

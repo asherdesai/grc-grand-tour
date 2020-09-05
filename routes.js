@@ -2,16 +2,25 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const router = express.Router();
 const Entry = require('./models/entry')
+const Coordinate = require('./models/coordinate');
+const coordinate = require('./models/coordinate');
 
 router.get("/", async (req, res) => {
-    let docs = await Entry.aggregate([{
+    let entryDocs = await Entry.aggregate([{
         $group: {
             _id: null,
             amount: { $sum: "$miles"}
         }
     }]);
 
-    res.render('index.ejs', { total: docs[0].amount.toFixed(2) } );
+    let coordinateDocs = await Coordinate.find({
+        dist: { $gte: entryDocs[0].amount }
+    }).exec();
+
+    res.render('index.ejs', {
+        coord: coordinateDocs[0],
+        total: entryDocs[0].amount.toFixed(2)
+    });
 });
 
 router.post("/submit", async (req, res) => {

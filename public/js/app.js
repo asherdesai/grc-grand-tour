@@ -1,17 +1,39 @@
+var map;
+var panorama;
+var marker;
+
 function initialize() {
-    var fenway = {lat: 42.345573, lng: -71.098326};
-    var map = new google.maps.Map(
+    var current = {lat: coordinate.lat, lng: coordinate.lon};
+    var sv = new google.maps.StreetViewService();
+
+    map = new google.maps.Map(
         document.querySelector('#map'), {
-            center: fenway,
-            zoom: 14
-    });
-    var panorama = new google.maps.StreetViewPanorama(
+            center: current,
+            zoom: 14,
+            streetViewControl: false
+        }
+    );
+
+    panorama = new google.maps.StreetViewPanorama(
         document.querySelector('#pano'), {
-            position: fenway,
-            pov: {
-                heading: 34,
-                pitch: 10
-            }
+            position: current
+        }
+    );
+
+    marker = new google.maps.Marker({position: current, map: map});
+
+    sv.getPanorama({ location: current, radius: 400 }, processSVData);
+}
+
+function processSVData(data, status) {
+    if (status === 'OK') {
+        panorama.setPano(data.location.pano);
+        panorama.setPov({
+            heading: 270,
+            pitch: 0
         });
-    map.setStreetView(panorama);
+        panorama.setVisible(true);
+    } else {
+        console.error("Street View unavailable at this location")
+    }
 }
