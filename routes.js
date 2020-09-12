@@ -13,10 +13,19 @@ router.get("/", async (req, res) => {
         }
     }]);
 
-    let coordinateDocs = await Coordinate.find({
-        dist: { $gte: entryDocs[0].amount }
-    }).exec();
+    let maxDistDocs = await Coordinate.aggregate([{
+        $group: {
+            _id: null,
+            max: { $max: "$dist" }
+        }
+    }]);
 
+    let maxDist = maxDistDocs[0].max;
+
+    let coordinateDocs = await Coordinate.find({
+        dist: { $gte: (entryDocs[0].amount % maxDist) }
+    }).exec();
+    
     res.render('index.ejs', {
         coord: coordinateDocs[0],
         total: entryDocs[0].amount.toFixed(2)

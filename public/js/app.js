@@ -22,7 +22,11 @@ function initialize() {
 
     marker = new google.maps.Marker({position: current, map: map});
 
-    sv.getPanorama({ location: current, radius: 400 }, processSVData);
+    sv.getPanorama({
+        location: current,
+        preference: nearest,
+        radius: 400
+    }, processSVData);
 }
 
 function processSVData(data, status) {
