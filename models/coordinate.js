@@ -12,4 +12,4 @@ const CoordinateSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("Coordinate", CoordinateSchema, 'north-georgia-coords');
+module.exports = mongoose.model("Coordinate", CoordinateSchema, 'full-route');
